@@ -1,4 +1,4 @@
 Yii-Practice
 ============
 
-Yii Framework. Some examples.
+Yii Framework. Some examples...
