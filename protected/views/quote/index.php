@@ -1,4 +1,4 @@
-<h2>Quote of the dayyyy</h2>
+<h2>Quote of the dayyyyww</h2>
 <div id="quote-of-the-day">
    <?php $this->renderPartial('_quote', array(
       'quote' => $quote,
