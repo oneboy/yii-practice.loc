@@ -24,6 +24,15 @@ $this->breadcrumbs=array(
 			'type'=>'datetime',
 			'filter'=>false,
 		),
+                array(  
+                    'name' => 'rating',  
+                    'type' => 'raw',  
+                    'value'=>'$this->grid->controller->widget("CStarRating", array("name" => $data->id, "id" => $data->id, "value" => $data->rating, "readOnly" => true,),true)',  
+                    'headerHtmlOptions' => array('style' => 'width:85px;'),  
+                    'htmlOptions' => array('class' => 'rating-block'),  
+                    'filter' => false,  
+                    'sortable' => false,  
+                ),
 		array(
 			'class'=>'CButtonColumn',
 		),
