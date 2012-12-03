@@ -81,8 +81,8 @@ class Post extends CActiveRecord
 			'status' => 'Status',
 			'create_time' => 'Create Time',
 			'update_time' => 'Update Time',
-			'author_id' => 'Author',
-                        'rating'    => 'Rating'
+            'author_id' => 'Author',
+            'rating'    => 'Rating'
 		);
 	}
 
