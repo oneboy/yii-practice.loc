@@ -8,6 +8,9 @@ $this->breadcrumbs=array(
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
+        'afterAjaxUpdate'=>"function() { 
+            jQuery('.rating-block input').rating({'readOnly':true}); 
+        }",
 	'columns'=>array(
 		array(
 			'name'=>'title',
