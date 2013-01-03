@@ -86,6 +86,9 @@ return array(
         'bootstrap'=>array(
             'class'=>'bootstrap.components.Bootstrap',
         ),
+        'syntaxhighlighter' => array(
+            'class' => 'ext.JMSyntaxHighlighter.JMSyntaxHighlighter',
+        ),
 	),
 
 	// application-level parameters that can be accessed
