@@ -5,9 +5,14 @@
 
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
+
+Yii::setPathOfAlias('bootstrap', dirname(__FILE__).'/../extensions/bootstrap');
+
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Yii Blog Demo',
+    'theme'=>'bootstrap',
+
 
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -17,11 +22,14 @@ return array(
 		'application.models.*',
 		'application.components.*',
 	),
-    
+
         'modules'=>array(
             'gii'=>array(
                 'class'=>'system.gii.GiiModule',
                 'password'=>'111111',
+                'generatorPaths'=>array(
+                    'bootstrap.gii',
+                ),
             ),
         ),
 
@@ -38,16 +46,16 @@ return array(
 			'tablePrefix' => 'tbl_',
 		),*/
 		// uncomment the following to use a MySQL database
-		
+
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=blog',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => '',
+			'password' => '123456',
 			'charset' => 'utf8',
 			'tablePrefix' => 'tbl_',
 		),
-		
+
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
             'errorAction'=>'site/error',
@@ -75,6 +83,9 @@ return array(
 				*/
 			),
 		),
+        'bootstrap'=>array(
+            'class'=>'bootstrap.components.Bootstrap',
+        ),
 	),
 
 	// application-level parameters that can be accessed
