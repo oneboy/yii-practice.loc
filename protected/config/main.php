@@ -62,6 +62,7 @@ return array(
         ),
         'urlManager'=>array(
         	'urlFormat'=>'path',
+            'showScriptName' => false,
         	'rules'=>array(
         		'post/<id:\d+>/<title:.*?>'=>'post/view',
         		'posts/<tag:.*?>'=>'post/index',
