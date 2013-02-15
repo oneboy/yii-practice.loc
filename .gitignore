@@ -1,1 +1,4 @@
 /yii/
+/nbproject/
+/protected/runtime/cache/
+/assets/

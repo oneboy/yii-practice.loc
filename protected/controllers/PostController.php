@@ -124,12 +124,20 @@ class PostController extends Controller
 		if(isset($_GET['tag']))
 			$criteria->addSearchCondition('tags',$_GET['tag']);
 
-		$dataProvider=new CActiveDataProvider('Post', array(
+		$dataProvider=new CActiveDataProvider(Post::model()->cache(10000), array(
 			'pagination'=>array(
 				'pageSize'=>Yii::app()->params['postsPerPage'],
 			),
 			'criteria'=>$criteria,
 		));
+
+        $dataProvider = Post::model()->cache(10000)->findAllByAttributes(array('id' => 1));
+
+
+
+        echo'<pre>';
+        var_dump($dataProvider);
+        die();
 
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
@@ -177,7 +185,9 @@ class PostController extends Controller
 					$condition='status='.Post::STATUS_PUBLISHED.' OR status='.Post::STATUS_ARCHIVED;
 				else
 					$condition='';
-				$this->_model=Post::model()->findByPk($_GET['id'], $condition);
+				//$this->_model=Post::model()->findByPk($_GET['id'], $condition);
+
+                $this->_model=Post::model()->cache(10000)->findByPk($_GET['id'], $condition);
 			}
 			if($this->_model===null)
 				throw new CHttpException(404,'The requested page does not exist.');
